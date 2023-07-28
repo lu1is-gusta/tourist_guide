@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:http/http.dart';
 import 'src/models/appdata.dart';
 import 'src/pages/home.dart';
+import 'src/pages/preload.dart';
 
 void main() => runApp(
   MultiProvider(
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       routes: {
+        '/preload': (context) => Preload(),
         '/': (context) => ScreenHome(),
       },
-      initialRoute: '/',
+      initialRoute: '/preload',
     );
   }
 }
