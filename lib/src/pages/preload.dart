@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 import '../models/appdata.dart';
 
@@ -11,16 +10,20 @@ class Preload extends StatefulWidget {
 }
 
 class _PreloadState extends State<Preload> {
-  bool load = false;
+  bool load = true;
 
   void responseInfo() async{
-    await Future.delayed(Duration(milliseconds: 2));
+    await Future.delayed(Duration(milliseconds: 2)); //espera o build carregar
 
     final response = await Provider.of<AppData>(context, listen: false).getData();
 
     if(response){
       setState(() {
-        load = true;
+        Navigator.pushReplacementNamed(context, '/home'); //impede que o usuário volte a página
+      });
+    } else {
+      setState(() {
+        load = false;
       });
     }
   }
@@ -52,7 +55,12 @@ class _PreloadState extends State<Preload> {
             
             !load ? ElevatedButton(
               child: Text('Try again'),
-              onPressed: (){},
+              onPressed: (){
+                setState(() {
+                  load = true;
+                });
+                responseInfo();
+              },
             ) : Container(),
           ]
         ),

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       routes: {
         '/preload': (context) => Preload(),
-        '/': (context) => ScreenHome(),
+        '/home': (context) => ScreenHome(),
       },
       initialRoute: '/preload',
     );
