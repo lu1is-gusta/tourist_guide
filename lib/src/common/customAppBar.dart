@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   void searchPage(){
-    Navigator.popAndPushNamed(pageContext, '/search');
+    Navigator.pushNamed(pageContext, '/search');
   }
 
   @override
