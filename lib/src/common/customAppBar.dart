@@ -5,15 +5,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
     this.title = '',
     this.drawer = false,
     this.search = false,
-    required this.homeContext,
+    required this.pageContext,
     required this.scaffoldKey,
   }); 
-  
+
   final String title;
   final bool drawer;
   final bool search;
-  final BuildContext homeContext;
+  final BuildContext pageContext;
   final GlobalKey<ScaffoldState> scaffoldKey;
+
+  void searchPage(){
+    Navigator.popAndPushNamed(pageContext, '/search');
+  }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -28,7 +32,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
       actions: [
         search ?
         IconButton(
-          onPressed: () {}, 
+          onPressed: searchPage, 
           icon: Icon(Icons.search, color: Colors.black, size: 30),
         ) : Container()
       ],
@@ -39,7 +43,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
         icon: Icon(Icons.menu, color: Colors.black, size: 30)
       ) : IconButton(
         onPressed: () {
-          Navigator.pop(homeContext);
+          Navigator.pop(pageContext);
         }, 
         icon: Icon(Icons.arrow_back, color: Colors.black, size: 30)
       ) 

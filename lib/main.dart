@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'src/models/appdata.dart';
 import 'src/pages/home.dart';
 import 'src/pages/preload.dart';
+import 'src/pages/search.dart';
 
 void main() => runApp(
   MultiProvider(
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget{
       routes: {
         '/preload': (context) => Preload(),
         '/home': (context) => ScreenHome(),
+        '/search': (context) => ScreenSearch(),
       },
       initialRoute: '/preload',
     );
