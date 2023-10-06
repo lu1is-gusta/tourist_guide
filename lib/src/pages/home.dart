@@ -13,12 +13,13 @@ class ScreenHome extends StatelessWidget{
       builder: (context, appdata, child) => Scaffold(
         key: _scaffoldKey,
         appBar: CustomAppBar(
-          title: 'teste do app bar',
+          title: 'Home Page',
           drawer: true,
           search: true,
           homeContext: context,
           scaffoldKey: _scaffoldKey,
         ),
+        drawer: Drawer(),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
