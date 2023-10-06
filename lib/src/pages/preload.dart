@@ -15,13 +15,21 @@ class _PreloadState extends State<Preload> {
   void responseInfo() async{
     await Future.delayed(Duration(milliseconds: 2)); //espera o build carregar
 
-    final response = await Provider.of<AppData>(context, listen: false).getData();
+    try{
+      final response = await Provider.of<AppData>(context, listen: false).getData();
+    
+      if(response){
+        setState(() {
+          Navigator.pushReplacementNamed(context, '/home'); //impede que o usuário volte a página
+        });
+      } else {
+        setState(() {
+          load = false;
+        });
+      }
+    } catch(e) {
+      print(e);
 
-    if(response){
-      setState(() {
-        Navigator.pushReplacementNamed(context, '/home'); //impede que o usuário volte a página
-      });
-    } else {
       setState(() {
         load = false;
       });
