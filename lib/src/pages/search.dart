@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/appdata.dart';
-import '../common/customAppBar.dart';
+import '../models/app_data.dart';
+import '../common/custom_app_bar.dart';
 
 class ScreenSearch extends StatelessWidget{
 

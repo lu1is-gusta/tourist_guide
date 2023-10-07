@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/appdata.dart';
-import '../common/customAppBar.dart';
+import '../models/app_data.dart';
+import '../common/custom_app_bar.dart';
+import '../common/custom_drawer.dart';
 
 class ScreenHome extends StatelessWidget{
 
@@ -19,7 +20,7 @@ class ScreenHome extends StatelessWidget{
           pageContext: context,
           scaffoldKey: _scaffoldKey,
         ),
-        drawer: Drawer(),
+        drawer: CustomDrawer(),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

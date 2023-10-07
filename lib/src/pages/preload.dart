@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import '../models/appdata.dart';
+import '../models/app_data.dart';
 
 class Preload extends StatefulWidget {
 
