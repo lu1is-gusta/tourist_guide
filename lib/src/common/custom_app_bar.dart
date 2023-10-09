@@ -36,6 +36,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
           icon: Icon(Icons.search, color: Colors.black, size: 30),
         ) : Container()
       ],
+      
       leading: drawer ? IconButton(
         onPressed: () {
           scaffoldKey.currentState?.openDrawer();

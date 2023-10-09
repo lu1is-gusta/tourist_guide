@@ -20,23 +20,29 @@ class ScreenHome extends StatelessWidget{
           pageContext: context,
           scaffoldKey: _scaffoldKey,
         ),
-        drawer: CustomDrawer(),
+        drawer: CustomDrawer(
+          pageContext: context
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+
             children: [
               Container(
                 child: Text('Welcome to'),
                 margin: EdgeInsets.only(bottom: 30),
               ),
+
               Container(
                 child: Image.asset('lib/assets/devstravel_logo.png'),
                 width:200
               ),
+
               Container(
                 child: Text('Your travel guide'),
                 margin: EdgeInsets.only(top: 30),
               ),
+
             ]
           ),
         ),
