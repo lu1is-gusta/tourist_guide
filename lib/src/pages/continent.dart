@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:touristguide/src/common/city_box.dart';
 import '../models/app_data.dart';
 import '../common/custom_app_bar.dart';
 import '../common/custom_drawer.dart';
@@ -55,12 +56,9 @@ class ScreenContinent extends StatelessWidget{
                       scrollDirection: Axis.horizontal,
                       itemCount: cities.length,
                       itemBuilder: (cityContext, cityIndex){
-                        return Container(
-                          width: 130,
-                          height: 130,
-                          color: Colors.pink,
-                          margin: EdgeInsets.only(right: 10),
-                          child: Text(cities[cityIndex]['name']),
+                        return CityBox(
+                          dataCity: cities[cityIndex],
+                          onTap: (){},
                         );
                       }
                     ),
