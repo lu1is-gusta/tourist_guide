@@ -9,6 +9,11 @@ class ScreenContinent extends StatelessWidget{
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  void seeCity (continentContext, continentIndex){
+
+    Navigator.pushNamed(continentContext, '/cities', arguments: continentIndex);
+  }
+
   @override
   Widget build(BuildContext context){
     return Consumer<AppData>(
@@ -42,15 +47,16 @@ class ScreenContinent extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("${appdata.data[index]['name']} (${cities.length})"),
+
                       TextButton(
-                        onPressed: () { },
-                        child: Text('View more'),
+                        onPressed: () => seeCity(context, index),
+                        child: Text('See cities'),
                       ),
                     ],
                   ),
 
                   Container(
-                    height: 130,
+                    height: 150,
                     margin: EdgeInsets.only(bottom:15),
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
