@@ -6,6 +6,7 @@ import 'src/pages/preload.dart';
 import 'src/pages/search.dart';
 import 'src/pages/continent.dart';
 import 'src/pages/cities.dart';
+import 'src/pages/city_information.dart';
 
 void main() => runApp(
   MultiProvider(
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget{
         '/search': (context) => ScreenSearch(),
         '/continent': (context) => ScreenContinent(),
         '/cities': (context) => ScreenCities(),
+        '/city_information': (context) => ScreenCityInformation(),
       },
       initialRoute: '/preload',
     );

@@ -10,6 +10,12 @@ class ScreenCities extends StatelessWidget{
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  void cityInformation (continentContext, cityData){
+
+    Navigator.pushNamed(continentContext, '/city_information', arguments: cityData);
+
+  }
+
   @override
   Widget build(BuildContext context){
 
@@ -41,7 +47,9 @@ class ScreenCities extends StatelessWidget{
             children: List.generate(cities.length, (index) {
               return CityBox(
                 dataCity: cities[index],
-                onTap: () {},
+                onTap: (cityData){
+                  cityInformation(context, cityData);
+                },
               );
             }),
           )

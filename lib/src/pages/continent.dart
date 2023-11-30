@@ -12,6 +12,13 @@ class ScreenContinent extends StatelessWidget{
   void seeCity (continentContext, continentIndex){
 
     Navigator.pushNamed(continentContext, '/cities', arguments: continentIndex);
+
+  }
+
+  void cityInformation (continentContext, cityData){
+
+    Navigator.pushNamed(continentContext, '/city_information', arguments: cityData);
+
   }
 
   @override
@@ -64,7 +71,9 @@ class ScreenContinent extends StatelessWidget{
                       itemBuilder: (cityContext, cityIndex){
                         return CityBox(
                           dataCity: cities[cityIndex],
-                          onTap: (){},
+                          onTap: (cityData){
+                            cityInformation(cityContext, cityData);
+                          },
                         );
                       }
                     ),

@@ -15,7 +15,9 @@ class CityBox extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(top: 10, bottom: 10, right: 10),
       child: GestureDetector(
-        onTap: (){},
+        onTap: (){
+          onTap(dataCity);
+        },
         child: Stack(
           children: [
 
